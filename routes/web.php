@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ExportExcelPegawaiController;
+use App\Http\Controllers\ExportPdfPegawaiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,4 @@ Route::resource('pegawai', \App\Http\Controllers\PegawaiController::class);
 require __DIR__ . '/auth.php';
 
 Route::get('/export-excel-pegawai', ExportExcelPegawaiController::class)->name('export.excel');
+Route::get('/export-pdf-pegawai', ExportPdfPegawaiController::class)->name('export.pdf');
