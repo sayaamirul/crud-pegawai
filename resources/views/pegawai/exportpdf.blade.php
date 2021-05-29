@@ -8,32 +8,39 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-<div class="container">
-    <div class="row">
-            <table class="table">
-                    <thead class="thead-dark">
-                      <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Golongan</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Email</th>
-                         <th scope="col">Nip</th>
-                        <th scope="col">Jenis Kelamin</th>
-                        <th scope="col">Tempat Lahir</th>
-                        <th scope="col">Tanggal Lahir</th>
-                         <th scope="col">No Telp</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        @php
-                            $no=0;
-                        @endphp
-                      @forelse ($pegawai as $item)
-                      @php
-                          $no++;
-                      @endphp
-                        <tr>
-                            <td>{{ $no }}</th>
+    <div class="wrapper">
+    <div class="box">
+        <div class="box-header">
+           <center> Data Pegawai Kabupaten Sidoarjo</center>
+           <br>
+        </div>
+        <div class="box-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Golongan</th>
+                        <th>Nama</th>
+                        <th>Email</th>
+                         <th>Nip</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Tempat Lahir</th>
+                        <th>Tanggal Lahir</th>
+                         <th>No Telp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @php
+                        $no=0;
+
+                    @endphp
+                    @foreach ($pegawai as $item)
+                    @php
+                        $no++;
+
+                    @endphp
+                    <tr>
+                        <td>{{ $no }}</th>
                             <td>{{ $item->golongan->nama }}</td>
                             <td>{{ $item->nama }}</td>
                             <td>{{ $item->email }}</td>
@@ -42,15 +49,18 @@
                             <td>{{ $item->tempat_lahir }}</td>
                             <td>{{ $item->tanggal_lahir }}</td>
                             <td>{{ $item->no_telp }}</td>
-                      </tr>
-                      @empty
-                        <tr>
-                            <td colspan="9" class="text-center">Belum Ada Data</td>
-                        </tr>
-                      @endforelse
-                    </tbody>
-                  </table>
+                    </tr>
+                    @endforeach
+
+                </tbody>
+
+            </table>
         </div>
     </div>
+
+   </div>
+     <footer class="fixed-bottom">
+         <span class="blockquote-footer"> Printed by Kabupaten Sidoarjo </span>
+     </footer>
 </body>
 </html>
