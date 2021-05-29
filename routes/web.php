@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExportExcelPegawaiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,4 +24,6 @@ Route::get('/dashboard', function () {
 
 Route::resource('pegawai', \App\Http\Controllers\PegawaiController::class);
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
+
+Route::get('/export-excel-pegawai', ExportExcelPegawaiController::class)->name('export.excel');
