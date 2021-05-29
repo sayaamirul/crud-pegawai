@@ -10,7 +10,9 @@
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">
-                        <a href="{{ route('pegawai.create') }}" class="btn btn-primary">Tambah Pegawai</a>
+                        <a href="{{ route('pegawai.create') }}" class="btn btn-primary"><i class="fa fa-plus"> Tambah Pegawai</i></a>
+                         <a href="{{ route('pegawai.create') }}" class="btn btn-danger"><i class="fa fa-file-pdf"> Export PDF</i></a>
+                         <a href="{{ route('pegawai.create') }}" class="btn btn-success"><i class="fa fa-file-excel"> Export excel</i></a>
                     </h3>
 
                     <div class="card-tools">
