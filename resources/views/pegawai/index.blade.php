@@ -51,8 +51,8 @@
                                 <td>{{ $item->jenis_kelamin }}</td>
                                 <td>
                                     <a href="{{ route('pegawai.edit', $item->id) }}"
-                                       class="btn btn-warning btn-sm">Edit</a>
-                                    <a id="delete" data-id="{{ $item->id }}" class="btn btn-danger btn-sm">Hapus</a>
+                                       class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                    <a id="delete" data-id="{{ $item->id }}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                         @empty
