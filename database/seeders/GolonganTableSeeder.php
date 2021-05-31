@@ -36,10 +36,6 @@ class GolonganTableSeeder extends Seeder
             'Golongan IVc: Pembina utama muda',
             'Golongan IVd Pembina utama madya',
             'Golongan IVe: Pembina utama',
-            'Eselon I',
-            'Eselon II',
-            'Eselon III',
-            'Eselon IV',
         ];
 
         foreach ($datas as $data) {
