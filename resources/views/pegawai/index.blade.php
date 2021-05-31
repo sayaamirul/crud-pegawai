@@ -52,7 +52,7 @@
                                 <td>
                                     <a href="{{ route('pegawai.edit', $item->id) }}"
                                        class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-                                    <a id="delete" data-id="{{ $item->id }}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                    <a id="delete" data-id="{{ $item->id }}" class="btn btn-danger btn-sm delete"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                         @empty
@@ -73,7 +73,7 @@
 @push('scripts')
     <script>
         $(function () {
-            $('#delete').click(function(e) {
+            $('.delete').click(function(e) {
                 e.preventDefault();
                 var id = $(this).data('id');
                 console.log(id);
