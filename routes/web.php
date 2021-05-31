@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\ExportExcelPegawaiController;
-use App\Http\Controllers\ExportPdfPegawaiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,17 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.admin');
+// Route::get('/', function () {
+//     return view('layouts.admin');
+// });
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', function () {
+        return view('layouts.admin');
+    });
+    Route::resource('pegawai', \App\Http\Controllers\PegawaiController::class);
+    Route::get('/export-excel-pegawai', \App\Http\Controllers\ExportExcelPegawaiController::class)->name('export.excel');
+    Route::get('/export-pdf-pegawai', \App\Http\Controllers\ExportPdfPegawaiController::class)->name('export.pdf');
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-Route::resource('pegawai', \App\Http\Controllers\PegawaiController::class);
+// Route::resource('pegawai', \App\Http\Controllers\PegawaiController::class);
 
 require __DIR__ . '/auth.php';
 
-Route::get('/export-excel-pegawai', ExportExcelPegawaiController::class)->name('export.excel');
-Route::get('/export-pdf-pegawai', ExportPdfPegawaiController::class)->name('export.pdf');
+// Route::get('/export-excel-pegawai', ExportExcelPegawaiController::class)->name('export.excel');
+// Route::get('/export-pdf-pegawai', ExportPdfPegawaiController::class)->name('export.pdf');
