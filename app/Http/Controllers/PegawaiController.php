@@ -16,7 +16,7 @@ class PegawaiController extends Controller
     public function index()
     {
         return view('pegawai.index', [
-            'pegawai' => Pegawai::all(),
+            'pegawai' => Pegawai::paginate(10),
         ]);
     }
 
@@ -108,7 +108,7 @@ class PegawaiController extends Controller
         $pegawai = Pegawai::find($id);
         $pegawai->update($validatedData);
 
-        session()->flash('success', 'Data Pegawai Berhasil Ditambahkan.');
+        session()->flash('success', 'Data Pegawai Berhasil Diperbarui.');
 
         return redirect()->route('pegawai.index');
     }

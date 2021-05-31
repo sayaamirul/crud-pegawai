@@ -5,6 +5,9 @@
 @endsection
 
 @section('content')
+    @if(session('success'))
+        <div class="alert alert-success d-block">{{ session('success') }}</div>
+    @endif
     <div class="row">
         <div class="col-12">
             <div class="card">
