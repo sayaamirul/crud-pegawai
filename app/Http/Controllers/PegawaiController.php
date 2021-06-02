@@ -15,9 +15,9 @@ class PegawaiController extends Controller
      */
     public function index()
     {
-        return view('pegawai.index', [
-            'pegawai' => Pegawai::paginate(10),
-        ]);
+        $pegawai = Pegawai::paginate(10);
+
+        return view('pegawai.index', ['pegawai' => $pegawai]);
     }
 
     /**
@@ -27,9 +27,9 @@ class PegawaiController extends Controller
      */
     public function create()
     {
-        return view('pegawai.create', [
-            'golongan' => Golongan::all(),
-        ]);
+        $golongan = Golongan::all();
+
+        return view('pegawai.create', ['golongan' => $golongan]);
     }
 
     /**
@@ -78,9 +78,12 @@ class PegawaiController extends Controller
      */
     public function edit($id)
     {
+        $pegawai = Pegawai::find($id);
+        $golongan = Golongan::all();
+
         return view('pegawai.edit', [
-            'golongan' => Golongan::all(),
-            'pegawai' => Pegawai::find($id)
+            'golongan' => $golongan,
+            'pegawai' => $pegawai
         ]);
     }
 

@@ -69,6 +69,7 @@
                 <!-- /.card-body -->
             </div>
             <!-- /.card -->
+            {{ $pegawai->links('pagination::bootstrap-4') }}
         </div>
     </div>
 @endsection
